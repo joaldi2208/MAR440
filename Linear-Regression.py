@@ -22,6 +22,7 @@ def preProcessing(datas):
 
 
 def analyseNutrient(x,y,data,ind):
+    ''' gets the preprocessed data and plots it '''
     name = ["Nitrate", "Phosphate"]
     slope, intercept, r, p, se = stats.linregress(x, y)
     print(f"slope:{slope} \n intercept:{intercept} \n r:{r} \n p:{p} \n se:{se}")
