@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-import pandas as pd
+
 
 
 # read in data
@@ -38,13 +39,13 @@ def analyseNutrient(x,y,data,ind):
     data["Conc"] = (data.Absorb / slope) - intercept
     data.to_csv(f"data{ind}.tsv".format(ind), sep="\t")
     
-    plt.plot(x,y,"k.", label="Standard Samples")
-    plt.plot(data.Conc, data.Absorb,"r.", label="Samples")
-    plt.plot(np.arange(1,np.max(x)+2), slope * np.arange(1,max(x)+2) + intercept, "k-", label=f" slope:{round(slope,5)} \n intercept:{round(intercept,5)} \n R$^2$:{round(r**2,5)}")
-    plt.xlabel("Concentration [$\mu$mol/L]")
-    plt.ylabel("Absorbance")
-    plt.legend()
-    plt.show()
+    # plt.plot(x,y,"k.", label="Standard Samples")
+    # plt.plot(data.Conc, data.Absorb,"r.", label="Samples")
+    # plt.plot(np.arange(1,np.max(x)+2), slope * np.arange(1,max(x)+2) + intercept, "k-", label=f" slope:{round(slope,5)} \n intercept:{round(intercept,5)} \n R$^2$:{round(r**2,5)}")
+    # plt.xlabel("Concentration [$\mu$mol/L]")
+    # plt.ylabel("Absorbance")
+    # plt.legend()
+    # plt.show()
 
 preProcessing([n_data, p_data])
 
