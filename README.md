@@ -22,7 +22,28 @@ $ pip install numpy
 $ pip install scipy
 ```
 The installations are also possible with conda.
-
+```mermaid
+classDiagram
+      DataAnalysis.py --|> LR.py
+      DataAnalysis.py --|> CTD.py
+      DataAnalysis.py --|> Zebra
+      DataAnalysis.py: +int age
+      DataAnalysis.py: +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class LR.py{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class CTD.py{
+          -int sizeInFeet
+          -canEat()
+      }
+      class PNF.py{
+          +bool is_wild
+      }
+```
 ## Scripts
 There are three scripts uploaded which tackle different tasks but rely on the output of each other. The scripts are specificly build for the data sended from the supervisor, why I will not explain the exact structur of the needed files. The scripts should be easily adjusted for different approaches or slightly differences in the sended files. The following part will shortly summarize function of the different scripts.
 
