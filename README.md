@@ -22,7 +22,8 @@ $ pip install numpy
 $ pip install scipy
 ```
 The installations are also possible with conda.
-   
+
+## Program structure
 ```mermaid
 graph LR;
     A(DataAnalysis) --> |call 1| B(LR);
