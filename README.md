@@ -22,27 +22,15 @@ $ pip install numpy
 $ pip install scipy
 ```
 The installations are also possible with conda.
+   
 ```mermaid
-classDiagram
-      DataAnalysis.py --|> LR.py
-      DataAnalysis.py --|> CTD.py
-      DataAnalysis.py --|> Zebra
-      DataAnalysis.py: +int age
-      DataAnalysis.py: +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class LR.py{
-          +String beakColor
-          +swim()
-          +quack()
-      }
-      class CTD.py{
-          -int sizeInFeet
-          -canEat()
-      }
-      class PNF.py{
-          +bool is_wild
-      }
+graph LR;
+    A(DataAnalysis) --> |call 1| B(LR);
+    A --> |call 2| C(CTD);
+    A --> |call 3| D(PNF);
+    B --> |create| E(linear regression and calculates nitrate + phosphate concenctration);
+    C --> |create| F(colormap plot and df for all CTD data);
+    D --> |create| G(depths plotted against fluorescence nitrate and phosphate for six stations);
 ```
 ## Scripts
 There are three scripts uploaded which tackle different tasks but rely on the output of each other. The scripts are specificly build for the data sended from the supervisor, why I will not explain the exact structur of the needed files. The scripts should be easily adjusted for different approaches or slightly differences in the sended files. The following part will shortly summarize function of the different scripts.
